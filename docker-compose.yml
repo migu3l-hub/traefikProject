@@ -27,9 +27,8 @@
 
 
   networks:
-    default:
-      external:
-        name: traefik
+    traefik:
+      external: true
 
   volumes:
     letsencrypt:
