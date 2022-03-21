@@ -22,13 +22,14 @@ services:
       # The Web UI (enabled by --api.insecure=true)
       - "9090:8080"
     volumes:
-      - "./letsencrypt:/letsencrypt"
+      - "/Sistemas/traefik/letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
 
 networks:
-  traefik:
-    external: true
+  default:
+    external:
+      name: traefik
 
 #  volumes:
 #    letsencrypt:
